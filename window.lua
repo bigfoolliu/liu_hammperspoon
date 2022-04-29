@@ -93,3 +93,9 @@ hs.hotkey.bind({'ctrl', 'alt'}, 'f', function() hs.window.focusedWindow():moveTo
 -- ctrl + alt + c,将当前活动窗口移动到中间位置
 hs.hotkey.bind({'ctrl', 'alt'}, 'c', function() hs.window.focusedWindow():centerOnScreen() end)
 
+-- ctrl + alt + up,将当前活动窗口移动到上半窗口
+hs.hotkey.bind({'ctrl', 'alt'}, 'up', function() hs.window.focusedWindow():moveToUnit({0, 0, 1, 0.5}) end)
+
+-- ctrl + alt + down,将当前活动窗口移动到上半窗口
+hs.hotkey.bind({'ctrl', 'alt'}, 'down', function() hs.window.focusedWindow():moveToUnit({0, 0.5, 1, 0.5}) end)
+
