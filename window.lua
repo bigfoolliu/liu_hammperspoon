@@ -5,6 +5,10 @@
 --
 -- hs.hotkey.bind({'alt', 'cmd'}, 'l', function() hs.window.focusedWindow():moveToUnit({0, 0, 0.5, 1}) end)
 
+
+-- 自定义窗口大小管理器
+-- local windowResizer = {}
+
 -- cmd + alt + ctrl + h, 将当前窗口向左移动10个像素
 hs.hotkey.bind({"cmd", "alt", "ctrl"}, "H", function()
   local win = hs.window.focusedWindow()  -- 当前活动的窗口
