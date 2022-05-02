@@ -61,7 +61,7 @@ hs.hotkey.bind({"ctrl", "alt"}, "e", function()
   f.w = max.w / 16 * 12
   f.h = max.h
   win:setFrame(f)
-  hs.alert.show(f)
+--  hs.alert.show(f)
 end)
 
 -- ctrl + alt + u,将当前平铺为右边窗口的14/16
@@ -92,10 +92,25 @@ hs.hotkey.bind({"ctrl", "alt"}, "a", function()
   win:setFrame(f)
 end)
 
--- 全屏方式二
-hs.hotkey.bind({'ctrl', 'alt'}, 'f', function() hs.window.focusedWindow():moveToUnit({0, 0, 1, 1}) end)
+
 -- ctrl + alt + c,将当前活动窗口移动到中间位置
-hs.hotkey.bind({'ctrl', 'alt'}, 'c', function() hs.window.focusedWindow():centerOnScreen() end)
+hs.hotkey.bind({'ctrl', 'alt'}, 'c', function() 
+    local win = hs.window.focusedWindow()
+    local f = win:frame()
+    local screen = win:screen()
+    local max = screen:frame()
+
+    f.x = max.x + (max.w / 16 * 1)
+    f.y = max.y + (max.h / 16 * 1)
+    f.w = max.w / 16 * 14
+    f.h = max.h / 16 * 14
+    win:setFrame(f)
+
+end)
+
+-- 全屏方式二
+-- ctrl + alt + f
+-- hs.hotkey.bind({'ctrl', 'alt'}, 'f', function() hs.window.focusedWindow():moveToUnit({0, 0, 1, 1}) end)
 
 -- ctrl + alt + up,将当前活动窗口移动到上半窗口
 hs.hotkey.bind({'ctrl', 'alt'}, 'up', function() hs.window.focusedWindow():moveToUnit({0, 0, 1, 0.5}) end)
