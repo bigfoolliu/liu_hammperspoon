@@ -9,6 +9,7 @@
 require("config")
 require("window")
 require("applicationEvents")
+require("clipboard")
 
 hyper = {'cmd', 'alt'}
 hyperShift = {'alt', 'cmd', 'shift'}
