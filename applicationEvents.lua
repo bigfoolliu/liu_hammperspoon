@@ -27,5 +27,5 @@ function mouseHighlight()
       mouseCircle = nil
     end)
 end
-hs.hotkey.bind({"cmd","alt","shift"}, "D", mouseHighlight)
+hs.hotkey.bind({"cmd","alt","ctrl"}, "D", mouseHighlight)
 

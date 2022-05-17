@@ -11,20 +11,27 @@ require("window")
 require("applicationEvents")
 require("clipboard")
 
-hyper = {'cmd', 'alt'}
-hyperShift = {'alt', 'cmd', 'shift'}
 
--- 按住cmd + alt + ctrl + w键,就会展示 Hello World, ,此时以通知的方式告知
-hs.hotkey.bind({"cmd", "alt", "ctrl"}, "W", function()
-  hs.notify.new({title="Hammerspoon", informativeText="Hello World"}):send()
+-- 可以提供一些帮助信息等
+help_message = [[
+1.Hello World, ctrl + cmd + alt + h;
+2.重置配置, cmd + alt + ctrl + r;
+3.破坏密码粘贴限制, cmd + alt + ctrl + v;
+4.打开或者关闭caffie, ctrl + cmd + alt + I/O;
+5.展示桌面小时钟, ctrl + cmd + alt + t;
+6.定位当前活动窗口, ctrl + alt + e/a/c/l/r;
+7.定位当前鼠标位置, ctrl + cmd + alt + d;
+]]
+hs.hotkey.bind({"cmd", "alt", "ctrl"}, "h", function()
+  hs.notify.new({title="Hammerspoon", informativeText=help_message}):send()
 end)
-
+hs.alert.show(help_message)
 
 -- cmd + ctrl + alt + r, 全局配置重新加载
 hs.hotkey.bind({"cmd", "alt", "ctrl"}, "r", function()
   hs.reload()
 end)
-hs.alert.show("Config loaded")
+hs.alert.show("hammperspoon config reloaded!")
 
 
 -- cmd + alt + ctrl + v,破坏密码粘贴限制
@@ -52,5 +59,5 @@ end)
 
 -- 屏幕小时钟展示, 使用 cmd + alt + t展示当前时间
 hs.loadSpoon("AClock")
-hs.hotkey.bind(hyper, 't', function() spoon.AClock:toggleShow() end)
+hs.hotkey.bind({'cmd', 'alt', 'ctrl'}, 't', function() spoon.AClock:toggleShow() end)
 
