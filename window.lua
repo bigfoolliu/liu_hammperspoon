@@ -100,10 +100,10 @@ hs.hotkey.bind({'ctrl', 'alt'}, 'c', function()
     local screen = win:screen()
     local max = screen:frame()
 
-    f.x = max.x + (max.w / 16 * 1)
-    f.y = max.y + (max.h / 16 * 1)
-    f.w = max.w / 16 * 14
-    f.h = max.h / 16 * 14
+    f.x = max.x + (max.w / 16 * 0.5)
+    f.y = max.y + (max.h / 16 * 0.5)
+    f.w = max.w / 16 * 15
+    f.h = max.h / 16 * 15
     win:setFrame(f)
 
 end)
