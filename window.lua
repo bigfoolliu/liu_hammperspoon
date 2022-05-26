@@ -1,4 +1,4 @@
--- half of screen
+-- 窗口位置调整
 -- {frame.x, frame.y, window.w, window.h}
 -- First two elements: we decide the position of frame
 -- Last two elements: we decide the size of frame

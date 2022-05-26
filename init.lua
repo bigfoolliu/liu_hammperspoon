@@ -6,6 +6,7 @@
 --   hs.alert.show("Hello World!")
 -- end)
 
+-- 引入其他模块
 require("config")
 require("window")
 require("applicationEvents")
@@ -60,4 +61,8 @@ end)
 -- 屏幕小时钟展示, 使用 cmd + alt + t展示当前时间
 hs.loadSpoon("AClock")
 hs.hotkey.bind({'cmd', 'alt', 'ctrl'}, 't', function() spoon.AClock:toggleShow() end)
+
+
+-- ctrl+cmd+alt+D 高亮当前鼠标的位置
+hs.hotkey.bind({"cmd","alt","ctrl"}, "D", mouseHighlight)
 
